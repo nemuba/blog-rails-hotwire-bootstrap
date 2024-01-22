@@ -1,0 +1,20 @@
+<div id="<%= dom_id post %>" class="modal-body">
+  <div class="col-md-12 m-3">
+    <h4><%= post.title %></h4>
+    <h6>Criado em: <%= post.created_at.strftime("%d/%m/%Y") %></h6>
+    <p><%= post.body %></p>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-danger"
+    data-controller="tooltip"
+    data-bs-dismiss="modal"
+    data-bs-toggle="tooltip"
+    data-bs-placement="top"
+    data-bs-title="Fechar">
+    <i class="bi bi-x-circle"></i> Fechar
+  </button>
+</div>

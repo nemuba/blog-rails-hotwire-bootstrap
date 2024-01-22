@@ -1,0 +1,5 @@
+
+<%= turbo_frame_tag :modal do %>
+  <%= render_modal(partial: 'posts/show', locals: { post: @post }, title: 'Visualizar Post') %>
+<% end %>
+

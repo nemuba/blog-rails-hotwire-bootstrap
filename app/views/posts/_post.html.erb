@@ -1,0 +1,61 @@
+<div id="<%= dom_id post %>" class="row mw-100">
+  <div class="col-md-12 my-3">
+    <div class="card">
+      <div class="card-header d-flex justify-content-start">
+        <h4 
+          class="card-title"
+          data-controller="tooltip"
+          class="card-subtitle text-muted mt-2"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Titulo"><%= post.title %></h4>        
+      </div>
+      <div class="card-body">
+        <p class="card-text"><%= post.body %></p>
+      </div>
+      <div class="card-footer d-flex justify-content-between">
+        <h6
+          data-controller="tooltip"
+          class="card-subtitle text-muted mt-2"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Criado em">Criado em <%= post.created_at.strftime("%d/%m/%Y") %></h6>
+        <div class="d-flex">
+          <%= link_to post,
+                      class: 'mx-1 btn btn-sm btn-info',
+                      data: {
+                        controller: 'tooltip',
+                        turbo_frame: 'modal',
+                        'bs-toggle': 'tooltip',
+                        'bs-placement': 'top',
+                        'bs-title': 'Visualizar'
+                      } do %>
+            <i class="bi bi-search"></i>
+          <% end %>
+          <%= link_to edit_post_path(post),
+                      class: 'mx-1 btn btn-sm btn-success',
+                      data: {
+                        controller: 'tooltip',
+                        turbo_frame: 'modal',
+                        'bs-toggle': 'tooltip',
+                        'bs-placement': 'top',
+                        'bs-title': 'Editar'
+                      } do %>
+            <i class="bi bi-pencil-square"></i>
+          <% end %>
+          <%= link_to destroy_post_path(post),
+                      class: 'mx-1 btn btn-sm btn-danger',
+                      data: {
+                        controller: 'tooltip',
+                        turbo_frame: 'modal',
+                        'bs-toggle': 'tooltip',
+                        'bs-placement': 'top',
+                        'bs-title': 'Excluir'
+                      } do %>
+            <i class="bi bi-trash"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

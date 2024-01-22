@@ -1,0 +1,52 @@
+<%= form_with(model: post) do |form| %>
+  <div class="modal-body">
+    <% if post.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <% title_error = post.errors[:title].any? ? 'is-invalid' : '' %>
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title, class: "form-control #{title_error}" %>
+    </div>
+
+    <div class="form-group">
+      <% body_error = post.errors[:body].any? ? 'is-invalid' : '' %>
+      <%= form.label :body, style: "display: block" %>
+      <%= form.text_area :body, class: "form-control #{body_error}" %>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <%= form.button type: 'button',
+                    class: 'btn btn-danger',
+                    data: {
+                      controller: 'tooltip',
+                      'bs-dismiss': 'modal',
+                      'bs-toggle': 'tooltip',
+                      'bs-placement': 'top',
+                      'bs-title': 'Fechar'
+                    } do %>
+      <i class="bi bi-x-circle"></i> Fechar
+    <% end %>
+    <%= form.button type: 'submit',
+                    class: "btn btn-primary",
+                    data: {
+                      controller: 'tooltip',
+                      'bs-dismiss': 'modal',
+                      'bs-toggle': 'tooltip',
+                      'bs-placement': 'top',
+                      'bs-title': 'Salvar'
+                    } do %>
+      <i class="bi bi-save"></i> Salvar
+    <% end %>
+  </div>
+<% end %>

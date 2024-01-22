@@ -1,0 +1,19 @@
+<div data-controller="modal" id="modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalLabel"><%= title %></h1>
+        <button
+          aria-label="Close"
+          class="btn-close"
+          type="button"
+          data-controller="tooltip"
+          data-bs-dismiss="modal"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Fechar"></button>
+      </div>
+      <%= render partial: partial, locals: locals %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div data-controller="modal" id="modal_destroy" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
+  tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalLabel">
+          <%= title %>
+        </h1>
+        <button
+          aria-label="Close"
+          class="btn-close"
+          type="button"
+          data-controller="tooltip"
+          data-bs-dismiss="modal"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza?</p>
+      <div class="modal-footer">
+        <button 
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          data-controller="tooltip"
+          data-bs-dismiss="modal"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Não">
+          <i class="bi bi-x-circle"></i> Não
+        </button>
+        <%= button_to link,
+                      method: :delete,
+                      class: 'btn btn-success',
+                      data: { 
+                        'bs-dismiss': 'modal',
+                        controller: 'tooltip',
+                        'bs-toggle': 'tooltip',
+                        'bs-placement': 'top',
+                        'bs-title': 'Sim'
+                      } do %>
+          <i class="bi bi-check-circle"></i> Sim
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
