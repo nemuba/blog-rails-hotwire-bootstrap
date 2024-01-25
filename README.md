@@ -1,24 +1,27 @@
-# README
+# Blog Rails Hotwire Bootstrap
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+This is a simple blog application built with Ruby on Rails, Hotwire and Bootstrap.
 
-* Ruby version
+## Features
 
-* System dependencies
+- Create, edit and delete posts
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby v3.2.2
+- Ruby on Rails v7.1.3
+- Bootstrap v5.1.3
+- PostgreSQL
 
-* Database initialization
+## Setup
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Clone this repository
+- Open terminal
+- Change directory by using `cd blog-rails-hotwire-bootstrap`
+- Run `bundle install`
+- Configure your database in `config/database.yml`
+- Run `rails db:create`
+- Run `rails db:migrate`
+- Run `bin/dev`
