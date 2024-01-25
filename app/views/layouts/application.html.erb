@@ -12,6 +12,9 @@
 
   <body>
     <%= render "shared/navbar" %>
+    <div class="toast-container position-fixed end-0 p-3">
+      <%= turbo_frame_tag :toasts %>
+    </div>
     <%= yield %>
   </body>
 </html>

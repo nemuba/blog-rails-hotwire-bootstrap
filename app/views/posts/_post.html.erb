@@ -8,7 +8,7 @@
           class="card-subtitle text-muted mt-2"
           data-bs-toggle="tooltip"
           data-bs-placement="top"
-          data-bs-title="Titulo"><%= post.title %></h4>        
+          data-bs-title="Title"><%= post.title %></h4>        
       </div>
       <div class="card-body">
         <p class="card-text"><%= post.body %></p>
@@ -19,7 +19,7 @@
           class="card-subtitle text-muted mt-2"
           data-bs-toggle="tooltip"
           data-bs-placement="top"
-          data-bs-title="Criado em">Criado em <%= post.created_at.strftime("%d/%m/%Y") %></h6>
+          data-bs-title="Created at">Created at <%= post.created_at.strftime("%d/%m/%Y") %></h6>
         <div class="d-flex">
           <%= link_to post,
                       class: 'mx-1 btn btn-sm btn-info',
@@ -28,7 +28,7 @@
                         turbo_frame: 'modal',
                         'bs-toggle': 'tooltip',
                         'bs-placement': 'top',
-                        'bs-title': 'Visualizar'
+                        'bs-title': 'Show'
                       } do %>
             <i class="bi bi-search"></i>
           <% end %>
@@ -39,7 +39,7 @@
                         turbo_frame: 'modal',
                         'bs-toggle': 'tooltip',
                         'bs-placement': 'top',
-                        'bs-title': 'Editar'
+                        'bs-title': 'Edit'
                       } do %>
             <i class="bi bi-pencil-square"></i>
           <% end %>
@@ -50,7 +50,7 @@
                         turbo_frame: 'modal',
                         'bs-toggle': 'tooltip',
                         'bs-placement': 'top',
-                        'bs-title': 'Excluir'
+                        'bs-title': 'Destroy'
                       } do %>
             <i class="bi bi-trash"></i>
           <% end %>

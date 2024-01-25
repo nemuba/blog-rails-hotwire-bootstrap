@@ -1,0 +1,12 @@
+<div id="liveToast" class="toast fade" role="alert" aria-live="assertive" aria-atomic="true" data-controller="toast">
+  <div class="toast-header <%= type %> text-white d-flex justify-content-between">
+    <strong class="me-auto"><%= title %></strong>
+    <small><%= time_ago_in_words(Time.now) %> ago</small>
+    <button type="button" class="btn btn-sm <%= type %>" data-bs-dismiss="toast" aria-label="Close">
+      <i class="bi bi-x text-white"></i>
+    </button>
+  </div>
+  <div class="toast-body">
+    <%= message %>
+  </div>
+</div>

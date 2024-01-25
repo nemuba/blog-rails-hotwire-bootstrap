@@ -1,1 +1,11 @@
-<%= turbo_stream.remove @post %>
+<%= turbo_stream.replace "posts" do %>
+  <div id="posts" class="container mt-5">
+    <h1>Posts</h1>
+    <%= render @posts %>
+    <%= render "pager", pagy: @pagy %>
+  </div>
+<% end %>
+
+<%= turbo_stream.append :toasts do %>
+  <%= render_toast type: 'bg-success', title: 'Blog - Post', message: 'Destroyed with success!' %>
+<% end %>

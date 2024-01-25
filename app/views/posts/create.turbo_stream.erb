@@ -1,8 +1,17 @@
 <% if @post.errors.any? %>
   <%= turbo_stream.update :modal do %>
-    <%= render_modal(partial: 'posts/form', locals: { post: @post } , title: 'Novo Post') %>
+    <%= render_modal partial: 'posts/form', locals: { post: @post } , title: 'Novo Post' %>
   <% end %>
 <% else %>
   <%= turbo_stream.update :modal, html: '' %>
-  <%= turbo_stream.append :posts, @post %>
+  <%= turbo_stream.replace "posts" do %>
+    <div id="posts" class="container mt-5">
+      <h1>Posts</h1>
+      <%= render @posts %>
+      <%= render "pager", pagy: @pagy %>
+    </div>
+  <% end %>
+  <%= turbo_stream.append :toasts do %>
+    <%= render_toast type: 'bg-success', title: 'Blog - Post', message: 'Created with success!' %>
+  <% end %>
 <% end %>

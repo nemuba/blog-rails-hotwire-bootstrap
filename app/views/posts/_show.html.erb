@@ -1,7 +1,7 @@
 <div id="<%= dom_id post %>" class="modal-body">
   <div class="col-md-12 m-3">
     <h4><%= post.title %></h4>
-    <h6>Criado em: <%= post.created_at.strftime("%d/%m/%Y") %></h6>
+    <h6>Created at: <%= post.created_at.strftime("%d/%m/%Y") %></h6>
     <p><%= post.body %></p>
   </div>
 </div>
@@ -14,7 +14,7 @@
     data-bs-dismiss="modal"
     data-bs-toggle="tooltip"
     data-bs-placement="top"
-    data-bs-title="Fechar">
-    <i class="bi bi-x-circle"></i> Fechar
+    data-bs-title="Close">
+    <i class="bi bi-x-circle"></i> Close
   </button>
 </div>

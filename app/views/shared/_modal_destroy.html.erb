@@ -14,11 +14,12 @@
           data-bs-dismiss="modal"
           data-bs-toggle="tooltip"
           data-bs-placement="top"
-          data-bs-title="Fechar"></button>
+          data-bs-title="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Tem certeza?</p>
-      <div class="modal-footer">
+        <p>Do you really want to delete this Post?</p>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
         <button 
           type="button"
           class="btn btn-danger"
@@ -27,8 +28,8 @@
           data-bs-dismiss="modal"
           data-bs-toggle="tooltip"
           data-bs-placement="top"
-          data-bs-title="Não">
-          <i class="bi bi-x-circle"></i> Não
+          data-bs-title="No">
+          <i class="bi bi-x-circle"></i> No
         </button>
         <%= button_to link,
                       method: :delete,
@@ -38,9 +39,9 @@
                         controller: 'tooltip',
                         'bs-toggle': 'tooltip',
                         'bs-placement': 'top',
-                        'bs-title': 'Sim'
+                        'bs-title': 'Yes'
                       } do %>
-          <i class="bi bi-check-circle"></i> Sim
+          <i class="bi bi-check-circle"></i> Yes
         <% end %>
       </div>
     </div>

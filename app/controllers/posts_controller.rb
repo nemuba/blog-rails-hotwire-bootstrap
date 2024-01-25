@@ -3,7 +3,11 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @pagy, @posts = pagy(Post.all, items: 3)
+
+    if request.variant == :turbo_stream
+      render turbo_stream: 'posts/index.turbo_stream.erb'
+    end
   end
 
   # GET /posts/1 or /posts/1.json
@@ -23,6 +27,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
+    @pagy, @posts = pagy(Post.all, items: 3)
 
     respond_to do |format|
       format.turbo_stream
@@ -44,6 +49,8 @@ class PostsController < ApplicationController
       render 'posts/destroy'
     else
       @post.destroy!
+      @pagy, @posts = pagy(Post.all, items: 3)
+
 
       respond_to do |format|
         format.turbo_stream

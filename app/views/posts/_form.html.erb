@@ -1,16 +1,6 @@
 <%= form_with(model: post) do |form| %>
   <div class="modal-body">
-    <% if post.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-        <ul>
-          <% post.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= render "form_errors", post: post %>
 
     <div class="form-group">
       <% title_error = post.errors[:title].any? ? 'is-invalid' : '' %>
@@ -33,9 +23,9 @@
                       'bs-dismiss': 'modal',
                       'bs-toggle': 'tooltip',
                       'bs-placement': 'top',
-                      'bs-title': 'Fechar'
+                      'bs-title': 'Close'
                     } do %>
-      <i class="bi bi-x-circle"></i> Fechar
+      <i class="bi bi-x-circle"></i> Close
     <% end %>
     <%= form.button type: 'submit',
                     class: "btn btn-primary",
@@ -44,9 +34,10 @@
                       'bs-dismiss': 'modal',
                       'bs-toggle': 'tooltip',
                       'bs-placement': 'top',
-                      'bs-title': 'Salvar'
+                      'bs-title': 'Save',
+                      'disable-with': 'Saving...'
                     } do %>
-      <i class="bi bi-save"></i> Salvar
+      <i class="bi bi-save"></i> Save
     <% end %>
   </div>
 <% end %>

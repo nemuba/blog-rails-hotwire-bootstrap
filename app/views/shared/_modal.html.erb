@@ -1,5 +1,5 @@
-<div data-controller="modal" id="modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+<div data-controller="modal" id="modal" class="modal modal-lg fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered mh-100">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="modalLabel"><%= title %></h1>
@@ -11,7 +11,7 @@
           data-bs-dismiss="modal"
           data-bs-toggle="tooltip"
           data-bs-placement="top"
-          data-bs-title="Fechar"></button>
+          data-bs-title="Close"></button>
       </div>
       <%= render partial: partial, locals: locals %>
     </div>
