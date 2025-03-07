@@ -9,9 +9,9 @@
     </div>
 
     <div class="form-group">
-      <% body_error = post.errors[:body].any? ? 'is-invalid' : '' %>
+      <% published_error = post.errors[:body].any? ? 'is-invalid' : '' %>
       <%= form.label :body, style: "display: block" %>
-      <%= form.text_area :body, class: "form-control #{body_error}" %>
+      <%= form.rich_text_area :body, class: "form-control #{published_error}" %>
     </div>
   </div>
 

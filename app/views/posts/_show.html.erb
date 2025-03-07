@@ -2,7 +2,12 @@
   <div class="col-md-12 m-3">
     <h4><%= post.title %></h4>
     <h6>Created at: <%= post.created_at.strftime("%d/%m/%Y") %></h6>
-    <p><%= post.body %></p>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= post.body %>
+      </div>
+    </div>
   </div>
 </div>
 
