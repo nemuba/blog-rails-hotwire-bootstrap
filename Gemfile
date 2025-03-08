@@ -64,3 +64,6 @@ group :development do
 end
 
 gem "pagy"
+
+# Authentication
+gem "devise"
